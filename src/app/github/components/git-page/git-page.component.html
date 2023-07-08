@@ -1,0 +1,38 @@
+<h2>Busqueda personalizada</h2>
+<h5><b>Consumiendo:</b> https://api.github.com/users/NOMBRE_BUSCAR</h5>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- SearchBox -->
+    <shared-search-box
+      (onValue)="searchByUser($event)"></shared-search-box>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-4">
+    <ul class="list-group">
+      <li class="list-group-item">
+        Nombre => {{ theGit.name }}
+      </li>
+      <li class="list-group-item">
+        Login => {{ theGit.login }}
+      </li>
+      <li class="list-group-item">
+        Email => {{ theGit.email }}
+      </li>
+      <li class="list-group-item">
+        Followers =>{{ theGit.followers }}
+      </li>
+      <li class="list-group-item">
+        Following => {{ theGit.following }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-4">
+    <img src="{{ theGit.avatar_url }}" alt="">
+  </div>
+</div>

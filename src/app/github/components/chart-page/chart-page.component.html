@@ -1,0 +1,31 @@
+<h3>Gráfica de datos</h3>
+
+<div *ngIf="gits.length === 0; else table" class="alert alert-warning text-center">
+  No hay gits para mostrar la gráfica
+</div>
+
+<ng-template #table>
+
+  <div class="row">
+    <div class="col">
+
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [dataLabels]="chartOptions.dataLabels"
+          [plotOptions]="chartOptions.plotOptions"
+          [xaxis]="chartOptions.xaxis"
+        ></apx-chart>
+      </div>
+
+      <ul>
+        <li *ngFor="let item of gits">
+          {{ item | json }}
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</ng-template>

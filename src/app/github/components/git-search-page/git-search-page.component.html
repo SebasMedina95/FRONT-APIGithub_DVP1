@@ -1,0 +1,34 @@
+<h2>Busqueda estandar</h2>
+<h5><b>Consumiendo:</b> https://api.github.com/search/users?q=CAMPO-BUSCAR</h5>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- SearchBox -->
+    <shared-search-box
+      (onValue)="searchBySearch($event)"></shared-search-box>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <!-- Table -->
+    <hr>
+
+    <github-git-table-res [gits]="arrayGits"></github-git-table-res>
+
+  </div>
+
+  <hr>
+  <h3>Gráfica desde el mismo componente: </h3>
+  <div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [dataLabels]="chartOptions.dataLabels"
+      [plotOptions]="chartOptions.plotOptions"
+      [xaxis]="chartOptions.xaxis"
+    ></apx-chart>
+  </div>
+
+</div>
